@@ -1,6 +1,0 @@
-[flake8]
-# E402 module level import not at top of file
-# E501 line too long
-ignore = E402
-exclude = venv/*, docs/*, docs-cp/*, tests/*, .tox
-max-complexity = 15

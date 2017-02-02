@@ -1,7 +1,0 @@
-Dear {{ user.name }},
-
-Your account has been removed.
-
-Sincerely,
-
-The CERT-EU Team
