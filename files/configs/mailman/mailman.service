@@ -1,0 +1,15 @@
+[Unit]
+Description=Mailman service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=vagrant
+Group=vagrant
+#EnvironmentFile=/etc/default/mailman
+WorkingDirectory=/srv/mailman
+ExecStart=/srv/mailman/py3/bin/mailman -C /srv/mailman/mailman.cfg start
+ExecStop=/srv/mailman/py3/bin/mailman -C /srv/mailman/mailman.cfg stop
+
+[Install]
+WantedBy=multi-user.target

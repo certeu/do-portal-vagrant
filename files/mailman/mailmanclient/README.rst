@@ -1,0 +1,1 @@
+src/mailmanclient/docs/index.rst

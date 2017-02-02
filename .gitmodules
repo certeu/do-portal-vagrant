@@ -1,0 +1,3 @@
+[submodule "files/do-portal"]
+	path = files/do-portal
+	url = https://github.com/certeu/do-portal/

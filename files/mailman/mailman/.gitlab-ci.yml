@@ -1,0 +1,40 @@
+# This is core test runner
+
+image: maxking/mailman-ci-runner
+
+variables:
+  POSTGRES_DB: "mailman_test"
+  POSTGRES_USER: "runner"
+  POSTGRES_PASSWORD: "runner"
+  MYSQL_ROOT_PASSWORD: "runner"
+  MYSQL_USER: "runner"
+  MYSQL_USER_PASSWORD: "runner"
+  MYSQL_DATABASE: "test_mailman"
+
+qa:
+  script:
+  - tox -e qa
+
+docs:
+  script:
+  - tox -e docs
+
+sqlite:
+  script:
+  - tox -e py34-nocov,py35-nocov,py36-nocov
+
+pgsql:
+  services:
+  - postgres:latest
+  script:
+  - MAILMAN_EXTRA_TESTING_CFG=/home/runner/configs/postgres.cfg tox -e py34-nocov-pg,py35-nocov-pg,py36-nocov-pg
+  tags:
+  - postgres
+
+mysql:
+  services:
+  - mysql:latest
+  script:
+  - MAILMAN_EXTRA_TESTING_CFG=/home/runner/configs/mysql.cfg tox -e py34-nocov-mysql,py35-nocov-mysql,py36-nocov-mysql
+  tags:
+  - mysql

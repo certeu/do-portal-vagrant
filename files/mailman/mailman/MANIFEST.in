@@ -1,0 +1,16 @@
+include *.py
+include COPYING MANIFEST.in
+recursive-include .buildout *
+recursive-include contrib *
+recursive-include cron *
+recursive-include data *
+global-include *.txt *.rst *.po *.mo *.cfg *.sql *.zcml *.html *.ini *.eml
+global-exclude *.egg-info
+prune src/attic
+prune src/web
+prune eggs
+prune parts
+prune .tox
+include src/mailman/testing/config*.pck
+include src/mailman/database/alembic/script.py.mako
+include src/mailman/database/alembic/versions/*.py
