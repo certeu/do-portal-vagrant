@@ -47,7 +47,7 @@ echo "Installing python celery"
     venv/bin/pip3.4 install celery
     venv/bin/pip3.4 install pymysql
     venv/bin/pip3.4 install jsonschema
-    venv/bin/pip3.4 install /vagrant/files/flask-tinyclients.tar.gz
+    venv/bin/pip3.4 install git+https://github.com/certeu/Flask-Tinyclients.git
     venv/bin/pip3.4 install git+https://github.com/ics/Flask-GnuPG.git
     venv/bin/pip3.4 install git+https://github.com/ics/domainfuzzer.git
     venv/bin/pip3.4 install -r requirements.txt
